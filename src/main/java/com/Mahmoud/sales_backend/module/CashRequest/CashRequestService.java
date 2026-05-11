@@ -12,9 +12,9 @@ import com.Mahmoud.sales_backend.shared.ApiResponse;
 @Service
 public class CashRequestService {
 
-    private final CashRequestRepository cashRequestRepository;
+    private final ICashRequestRepository cashRequestRepository;  // ← interface مش concrete
 
-    public CashRequestService(CashRequestRepository cashRequestRepository) {
+    public CashRequestService(ICashRequestRepository cashRequestRepository) {
         this.cashRequestRepository = cashRequestRepository;
     }
 
