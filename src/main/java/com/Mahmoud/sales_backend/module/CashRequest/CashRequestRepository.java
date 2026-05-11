@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class CashRequestRepository extends BaseRepository {
+public class CashRequestRepository extends BaseRepository implements ICashRequestRepository {
 
     public CashRequestRepository(Connection conn) {
         super(conn);
