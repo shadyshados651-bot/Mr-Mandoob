@@ -1,12 +1,129 @@
+# 🚚 Sales Backend — Mr. Mandoob
+
+**Sales Management System** | Spring Boot 3.2 | MySQL | JWT Authentication
+
+نظام إدارة المبيعات والمناديب — Spring Boot + MySQL + JWT
+
+---
+
+## 👨‍💻 Contributors
+
+- **Shady Esmat** – Backend Development
+- **Mahmoud Essam** – Backend Development
+- **Seif Fawzi** – Backend Development
+- **Mohamed Ramzi** – Backend Development
+
+---
+## ✨ Features
+
+| Module | Status |
+|--------|--------|
+| 🔐 JWT Auth (Login/Register) | ✅ |
+| 📦 Products (CRUD + Stock Management) | ✅ |
+| 👥 Client Management | ✅ |
+| 🧾 Invoices with Auto Profit Calculation | ✅ |
+| 💰 Payment Processing | ✅ |
+| 📦 Mandoob (Distributor) Stock Distribution | ✅ |
+| 💵 Cash Requests (Approve/Reject Workflow) | ✅ |
+| 📊 Role-Based Access Control (RBAC) Dashboard | ✅ |
+
+---
+
 # 🧠 Sales Backend Application
 The Sales Backend Application is a comprehensive Java-based project designed to manage sales operations, including product management, dashboard analytics, and secure authentication using JSON Web Tokens (JWT). This application is built on top of the Spring Boot framework, leveraging its simplicity and flexibility to create a robust and scalable backend system. The core features of this application include product CRUD operations, dashboard analytics, and secure authentication, making it an ideal solution for managing sales data and providing insights to drive business decisions.
+## 📡 API Endpoints
 
-## 🚀 Features
-- **Product Management**: Create, read, update, and delete (CRUD) products with ease, using the `ProductController` and `ProductService` classes.
-- **Dashboard Analytics**: Get insights into sales data and performance metrics through the `DashboardController` and `DashboardService` classes.
-- **Secure Authentication**: Authenticate users securely using JSON Web Tokens (JWT) with the `JwtAuthFilter` class.
-- **Database Management**: Manage database connections and perform CRUD operations using the `DatabaseConnection` and `DBConfig` classes.
-- **Error Handling**: Handle errors and exceptions gracefully, providing informative error messages and ensuring a smooth user experience.
+### 🔐 Authentication (Public)
+| Method | Endpoint | Body |
+|--------|----------|------|
+| `POST` | `/auth/register` | `{name, email, password, role}` |
+| `POST` | `/auth/login` | `{email, password}` |
+
+**Response:** JWT Token for subsequent requests
+
+---
+
+### 📊 Dashboard
+| Method | Endpoint | Auth Required |
+|--------|----------|---|
+| `GET` | `/dashboard/stats` | ✅ Bearer Token |
+
+---
+
+### 📦 Products Management
+| Method | Endpoint | Auth Required |
+|--------|----------|---|
+| `GET` | `/products` | ✅ Bearer Token |
+| `GET` | `/products/{id}` | ✅ Bearer Token |
+| `POST` | `/products` | ✅ Bearer Token |
+| `PUT` | `/products/{id}` | ✅ Bearer Token |
+| `DELETE` | `/products/{id}` | ✅ Bearer Token |
+
+---
+
+### 👥 Client Management
+| Method | Endpoint | Auth Required |
+|--------|----------|---|
+| `GET` | `/clients` | ✅ Bearer Token |
+| `GET` | `/clients/{id}` | ✅ Bearer Token |
+| `POST` | `/clients` | ✅ Bearer Token |
+| `PUT` | `/clients/{id}` | ✅ Bearer Token |
+| `DELETE` | `/clients/{id}` | ✅ Bearer Token |
+
+---
+
+### 🧾 Invoices
+| Method | Endpoint | Auth Required |
+|--------|----------|---|
+| `GET` | `/invoices` | ✅ Bearer Token |
+| `GET` | `/invoices/{id}` | ✅ Bearer Token |
+| `POST` | `/invoices` | ✅ Bearer Token |
+| `PUT` | `/invoices/{id}` | ✅ Bearer Token |
+
+---
+
+### 💰 Payments
+| Method | Endpoint | Parameters | Auth Required |
+|--------|----------|-----------|---|
+| `POST` | `/payments` | `invoiceId`, `amount` | ✅ Bearer Token |
+| `GET` | `/payments/invoice/{invoiceId}` | `invoiceId` | ✅ Bearer Token |
+
+---
+
+### 📦 Mandoob Stock Distribution
+| Method | Endpoint | Parameters | Auth Required |
+|--------|----------|-----------|---|
+| `GET` | `/mandoob-stock` | — | ✅ Bearer Token |
+| `GET` | `/mandoob-stock/{mandoobId}` | `mandoobId` | ✅ Bearer Token |
+| `POST` | `/mandoob-stock/distribute` | `mandoobId`, `productId`, `qty` | ✅ Bearer Token |
+
+---
+
+### 💵 Cash Requests
+| Method | Endpoint | Parameters | Auth Required |
+|--------|----------|-----------|---|
+| `GET` | `/cash-requests` | — | ✅ Bearer Token |
+| `POST` | `/cash-requests` | Request body | ✅ Bearer Token |
+| `PUT` | `/cash-requests/{id}/approve` | `id` | ✅ Bearer Token |
+| `PUT` | `/cash-requests/{id}/reject` | `id`, `reason` | ✅ Bearer Token |
+
+---
+
+## 🔑 Authentication Usage
+
+All protected endpoints require a Bearer token. Include it in the request header:
+
+```http
+Authorization: Bearer YOUR_JWT_TOKEN
+```
+
+**Example:**
+```bash
+curl -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  http://localhost:8086/dashboard/stats
+```
+
+---
 
 ## 🛠️ Tech Stack
 - **Backend Framework**: Spring Boot
@@ -70,19 +187,18 @@ sales-backend
 │   │   │   │   │   ├── SalesBackendApplicationTests.java
 ```
 
-## 📸 Screenshots
 
 
-## 🤝 Contributing
-To contribute to the Sales Backend Application, please follow these steps:
-1. Fork the repository: `git fork https://github.com/your-repo/sales-backend.git`
-2. Create a new branch: `git branch feature/your-feature`
-3. Commit your changes: `git commit -m "Your commit message"`
-4. Push your changes: `git push origin feature/your-feature`
-5. Create a pull request: `git pull-request`
+## 📝 License
 
+This project is provided as-is for educational and business use.
 
+---
 
-## 📬 Contact
-For any questions or concerns, please contact us at (01030761946).
+## 🤝 Support & Contributions
 
+For issues, questions, or feature requests, please open an [Issue](https://github.com/shadyshados651-bot/Final-sales-backend/issues) on GitHub.
+
+---
+
+**Last Updated:** May 10, 2026
