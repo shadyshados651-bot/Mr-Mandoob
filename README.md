@@ -1,170 +1,88 @@
-# Mandoob Backend (Sales Management)
+# 🧠 Sales Backend Application
+The Sales Backend Application is a comprehensive Java-based project designed to manage sales operations, including product management, dashboard analytics, and secure authentication using JSON Web Tokens (JWT). This application is built on top of the Spring Boot framework, leveraging its simplicity and flexibility to create a robust and scalable backend system. The core features of this application include product CRUD operations, dashboard analytics, and secure authentication, making it an ideal solution for managing sales data and providing insights to drive business decisions.
 
-Backend system for managing **mandoob (sales representatives)** operations: authentication, clients, products, invoices, payments, cash requests, and stock tracking.
+## 🚀 Features
+- **Product Management**: Create, read, update, and delete (CRUD) products with ease, using the `ProductController` and `ProductService` classes.
+- **Dashboard Analytics**: Get insights into sales data and performance metrics through the `DashboardController` and `DashboardService` classes.
+- **Secure Authentication**: Authenticate users securely using JSON Web Tokens (JWT) with the `JwtAuthFilter` class.
+- **Database Management**: Manage database connections and perform CRUD operations using the `DatabaseConnection` and `DBConfig` classes.
+- **Error Handling**: Handle errors and exceptions gracefully, providing informative error messages and ensuring a smooth user experience.
 
-## Features
+## 🛠️ Tech Stack
+- **Backend Framework**: Spring Boot
+- **Database**: MySQL
+- **Authentication**: JSON Web Tokens (JWT)
+- **Build Tool**: Maven
+- **Dependencies**:
+  - `spring-boot-starter-data-jpa`
+  - `lombok`
+  - `spring-boot-starter-webmvc`
+  - `jjwt-api`
+  - `mysql-connector-j`
+  - `spring-security-crypto`
 
-- **Admin authentication** (JWT)
-- Manage **Clients** (linked to mandoob)
-- Manage **Products** (cost, sell price, stock)
-- **Invoices** and invoice items
-- **Payments** tied to invoices
-- **Cash requests** (pending/approved/rejected)
-- **Mandoob stock** (add/reduce quantities)
-- **Dashboard stats**
+## 📦 Installation
+To install the Sales Backend Application, follow these steps:
+1. Clone the repository using Git: `git clone https://github.com/your-repo/sales-backend.git`
+2. Navigate to the project directory: `cd sales-backend`
+3. Build the project using Maven: `mvn clean install`
+4. Run the application using Spring Boot: `mvn spring-boot:run`
 
-## Tech Stack
+## 💻 Usage
+To use the Sales Backend Application, follow these steps:
+1. Start the application: `mvn spring-boot:run`
+2. Use a tool like Postman to send HTTP requests to the application's endpoints:
+   - `http://localhost:8080/products` for product management
+   - `http://localhost:8080/dashboard` for dashboard analytics
+   - `http://localhost:8080/auth` for authentication
 
-- Java 17
-- Spring Boot 4.0.5
-- Spring Data JPA + MySQL
-- JWT: `io.jsonwebtoken` (JJWT)
-- Lombok
-
-## Prerequisites
-
-- Java 17
-- MySQL database
-
-## Project Setup
-
-### 1) Configure MySQL
-Update your Spring configuration (typically `application.properties` / `application-*.properties`) with your DB settings and server port.
-
-> This repository expects a MySQL database. Connection details are usually under `spring.datasource.*`.
-
-### 2) Configure JWT
-JWT is used for authentication/authorization.
-
-> The JWT secret/token configuration is expected via application properties (commonly a `secret` / `jwt.secret`-like value).
-
-## Database Schema
-
-The SQL schema is provided in:
-
-- [`sql1.md`](./sql1.md)
-
-Tables include:
-
-- `users` (admin + mandoob)
-- `clients`
-- `products`
-- `invoices` + `invoice_items`
-- `payments`
-- `cash_requests`
-- `mandoob_stock`
-
-## Run the Application
-
-### Option A: Maven (recommended)
-
-```bash
-./mvnw spring-boot:run
+## 📂 Project Structure
+```markdown
+sales-backend
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   ├── com
+│   │   │   │   ├── sales
+│   │   │   │   │   ├── SalesBackendApplication.java
+│   │   │   │   │   ├── controller
+│   │   │   │   │   │   ├── ProductController.java
+│   │   │   │   │   │   ├── DashboardController.java
+│   │   │   │   │   ├── service
+│   │   │   │   │   │   ├── ProductService.java
+│   │   │   │   │   │   ├── DashboardService.java
+│   │   │   │   │   ├── repository
+│   │   │   │   │   │   ├── ProductRepository.java
+│   │   │   │   │   │   ├── DashboardRepository.java
+│   │   │   │   │   ├── config
+│   │   │   │   │   │   ├── DBConfig.java
+│   │   │   │   │   ├── security
+│   │   │   │   │   │   ├── JwtAuthFilter.java
+│   │   │   │   │   ├── util
+│   │   │   │   │   │   ├── DatabaseConnection.java
+│   │   ├── resources
+│   │   │   ├── application.properties
+│   ├── test
+│   │   ├── java
+│   │   │   ├── com
+│   │   │   │   ├── sales
+│   │   │   │   │   ├── SalesBackendApplicationTests.java
 ```
 
-### Option B: Package + run
+## 📸 Screenshots
 
-```bash
-./mvnw clean package
-java -jar target/*.jar
-```
 
-## API Base URL
+## 🤝 Contributing
+To contribute to the Sales Backend Application, please follow these steps:
+1. Fork the repository: `git fork https://github.com/your-repo/sales-backend.git`
+2. Create a new branch: `git branch feature/your-feature`
+3. Commit your changes: `git commit -m "Your commit message"`
+4. Push your changes: `git push origin feature/your-feature`
+5. Create a pull request: `git pull-request`
 
-By default:
 
-- `http://localhost:8080`
 
-## Authentication
-
-### Admin login
-
-- **POST** `/auth/login`
-
-Expected body: `User` (model in the project).
-
-Response: `ApiResponse` containing the token (JWT).
-
-### Verify token (if enabled)
-
-- **GET** `/auth/verify-token`
-
-## Endpoints (by module)
-
-### Products
-
-- **GET** `/products`
-- **GET** `/products/{id}`
-- **GET** `/products/count`
-- **GET** `/products/low-stock`
-- **POST** `/products`
-- **PUT** `/products/{id}`
-- **DELETE** `/products/{id}`
-
-### Clients
-
-Note: controller mapping in code uses `clients`.
-
-- **GET** `/clients`
-- **GET** `/clients/mandoob/{mandoobId}`
-- **GET** `/clients/{id}`
-- **POST** `/clients`
-- **DELETE** `/clients/{id}`
-
-### Mandoobs
-
-- **POST** `/mandoobs/create`
-- **GET** `/mandoobs`
-- **GET** `/mandoobs/{id}`
-- **POST** `/mandoobs/{id}/toggle-status`
-
-### Invoices
-
-- **GET** `/invoices`
-- **GET** `/invoices/{id}`
-- **GET** `/invoices/client/{clientId}`
-- **GET** `/invoices/mandoob/{mandoobId}`
-- **GET** `/invoices/{id}/items`
-- **POST** `/invoices`
-- **DELETE** `/invoices/{id}`
-
-### Payments
-
-- **GET** `/payments`
-- **GET** `/payments/invoice/{invoiceId}`
-- **POST** `/payments`
-
-### Cash Requests
-
-- **GET** `/cash-requests`
-- **GET** `/cash-requests/pending`
-- **GET** `/cash-requests/mandoob/{mandoobId}`
-- **POST** `/cash-requests/create`
-- **PUT** `/cash-requests/{id}/approve`
-- **PUT** `/cash-requests/{id}/reject`
-
-### Mandoob Stock
-
-- **GET** `/mandoob-stock`
-- **GET** `/mandoob-stock/mandoob/{mandoobId}`
-- **POST** `/mandoob-stock/add`
-- **POST** `/mandoob-stock/reduce`
-
-### Dashboard
-
-- **GET** `/dashboard/stats`
-
-## Responses
-
-All controllers use a shared wrapper:
-
-- `ApiResponse`
-
-## Notes
-
-- The repository uses the Java package naming `com.Mahmoud.sales_backend` (instead of `com.Mahmoud.sales-backend`, which is invalid in Java).
-
-## License
-
-Add your project license here (if applicable).
+## 📬 Contact
+For any questions or concerns, please contact us at (01030761946).
 
