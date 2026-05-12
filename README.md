@@ -1,60 +1,170 @@
-# 🚀 Mandoob Backend System
+# Mandoob Backend (Sales Management)
 
-## 📋 Project Description
-A backend system built using **Spring Boot** for managing Mandoob operations, including authentication, clients, invoices, products, payments, and cash requests.  
-The system is designed for distributors (mandoobs) and administrators to track sales, debts, and financial operations efficiently.
+Backend system for managing **mandoob (sales representatives)** operations: authentication, clients, products, invoices, payments, cash requests, and stock tracking.
 
----
+## Features
 
-## 👥 Team Members
-- Shady Esmat
-- Mahmoud Essam
-- Seif Fawzy
-- Mohamed Ramzy
+- **Admin authentication** (JWT)
+- Manage **Clients** (linked to mandoob)
+- Manage **Products** (cost, sell price, stock)
+- **Invoices** and invoice items
+- **Payments** tied to invoices
+- **Cash requests** (pending/approved/rejected)
+- **Mandoob stock** (add/reduce quantities)
+- **Dashboard stats**
 
----
+## Tech Stack
 
-## 🗂️ UML Diagram
-Click the link below to view the full system design:
-
-[📐 View UML Diagram](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Untitled%20Diagram.drawio&dark=auto#R%3Cmxfile%3E%3Cdiagram%20name%3D%22Page-1%22%20id%3D%22v2-G2XdTnOac1S7Mlepe%22%3E7V1Zd6NIsv4t%2FeBzXA%2FMYdP2aLuWrttVPTW1zEzPSx0sKJsqBDIgL%2F3rbyaQiCUlB5CBJTv61GlLCFAq8yMy4ovtxLpY3b%2BLnfX1x8j1ghNTd%2B9PrNcnJvtvYbE%2F%2FMhDfmQytSf5kavYd%2FNjxvbAF%2F9vrzioF0c3vusltRPTKApSf10%2FuIzC0FumtWNOHEd39dN%2BREH9W9fOldc68GXpBO2j%2F%2FHd9Do%2Falm6vv3gd8%2B%2Fui6%2B2p7Oi0tWjji7ODW5dtzornLIenNiXcRRlOavVvcXXsCnT0xMft3bHZ%2BWI4u9MIVc8O7bt3fvtL8u%2F%2Fjfj%2F872wTvNt8XpjZp36W4cZI%2BiElI7vxV4ITs3fmPKEy%2FFJ8Y7L0T%2BFche71kl3sxO3DrxanP5u%2Bs%2BCCN1uzo8toP3A%2FOQ7ThX5KkzvKXeHd%2BHcX%2B3%2By2TlDck30cpwUUzGntjC%2F8SnZYZ0djL2HnfBIjNxqHPjr3tRM%2FOElaHFhGQeCsE%2F%2By%2FBkrJ77yw%2FMoTaNVcdLdtZ96X9bOkp9zx%2BDNB5KuxCDzSbp1gk0xSa%2Bd1Ll0Eu8iR6IfhcUpbEK8%2B8rUFqvzzotWXho%2FsFOuKwAy5mZ%2B3d0WbsaigFBxm6lRLFvxVGmWYRVnOAXer8q7bxHBXhSgkAPk97u7%2F%2FM%2F%2FzN4e319kZ79Hv4r%2BeudJoHZPiBVUMN%2BdZqtZhz9YrMSRAwer8Moh5EfBI1DAkmB9yPdiaOErYcfXn3Iznltb498LmaQH4rYtT%2BC7FG79l3XCzkGopSvTzY2vrrryA%2FTbK4m5%2Bwfm70L%2FR%2BTkwkb%2BAV7b2zfs3%2F89DhlC8t%2Bi%2BNn0%2BAxNN15HFGdgaJtxRUHiXXG3g8EjWXvxkyBEfYgDQaIdOGnBBAEgPjsVk7Ir%2BDwUCRbADCZKpAj0uWf9YZJ4GfLn8NEbMJGL4ys2GoH3hYUXzlmXmtGCzhWGziWBCSBc%2BkFn6LEz5%2Fk13F%2BbgM8j%2BGj%2FgD44bUX%2B6kMGL0Wff7omi9spDWfk2hQLBpOzHOpODh9dWJOA35H179lL69y%2FOSHLuPmEbaatfN6wErsJ3twZegmErCMQ9509Day9INDVl2aVoZcvJMgbye%2B1rHHVZrASfJ1nt5suE1T%2FmLt1s907d%2F4it1r%2Bm%2FbU7hpyGZAy1T%2B2sW2NW2f5oVu7aQJty%2B3J9WHlY1UMqzYC5zUv%2BVjvtN%2BbDK0rVLN5n8uub7b9YZDhtD1yutyxH6oXWt68eqOv3rKe11GscvsP1PPX2gpQ1eoFW%2BC7DEoP4sd198kmnUfZJpwHLJjyWbtsVkJmF3PZuWt8Q%2B2DnocbULXc%2FMze%2F%2B6cpFlX395JYZ6pXmBd%2Buk7PsSj%2BnnrpPJvH3jKwG%2BZMeb49WD%2B%2FDHxvnOP%2FvkpNdvnSC45NbriGgZ9HD8nSHiR8A2Bc5m3GtiIvff068%2FosvI9bTLIFr%2BYmLAu%2BMYqT7Vflw7O0jrn7cHeLNI%2F%2Fh1813cS1%2BuNM%2F10yjORsxpIz2Hm3XGPhLIY4v5q36k%2BF1tlPAPtGWU7UGpt0qYbIq9dHnN3p9cvD45v5iUr352n182gmQZR0FQnwjwxQyYKd%2FyTL2YiNhz3CgMHnbfjQn2sLYHls8sQ%2BNVhln%2Be%2Fmux20NtpmEidhYszXYfpZNnsYn8zS%2Bujzl%2BxM7Kv68yv%2FyT8zJJH9TffHqVX5DziFpP5yVz0ad3fZ3L7j1%2BL6af55tXVqS71388zCKV5wdkuKZX3Hlpe8Lg4lpQi2LulR68qnYrwvR0cbRbHtXrj9OHrdFDWG7KCe1TGI9FbGe58wM%2BeytuQkcFQvTGQkSU8Iy6oynPalDQ5svsAhPq42NfRgioxVgtFoF5dkWzboqIqtEjEK%2BU7ruEo8JEB9EZCkmspprroK8lK6lhG4gmTBQJkjoBK7K1TeULa%2BFQ1m1EISlcUjo74NB0PMmrIidInaK2Clip4idOjB2qiBuzoLgtNhSuHHwJY2ZUC9InA8%2B2xrMqbNaZ7PP%2FveR7QviQHEfPft3UJTJ4R6tkTlqaJumDqXCnSzVjSTuZNKhSIciHYp0KNKhSId6wTrU%2BQPbwTarsFCkMofbMjuSv85Eeked6qDUlsM9OoJCZdhYrNSCNCrSqEijIo2KNCrSqEijqmhUn6O7LkpVrkIdkl5yuEdH0JhMFZHn8nQ4nVQmUplIZSKViVQmUplIZRIq05JhMt3px%2FOzW50QrXRQStIEK0TSkBQNICWJlCRSkkhJIiWJlKSXqiT5YcI2qCqfxCVpySA1lKWD0kcO9%2BgImlL5Xr2mJMlEI02JNCXSlEhTIk2JNKWXqilt1kxyei1Naa8PjkimQ1SdpljR4MYhJ2qT6kSqE6lOpDqR6kSq08iqk8tQXVed9ipMB6WQHO7REVQl28AK8zZsUpVIVSJViVQlUpVIVSJVaXu3F1Ab82bjxQ%2BnyU1QjcvKv5f9EmeV5Mf%2FefmT98%2FJynx1yRQsNSSqrXmgauUMLRaemgepKqP5LeEyrwcAbFtvIcBsFM9s1s60J3M0f%2FYUaGkY1POhUzsYt%2B7j6IEUSc1Mc6yambJmZQSL4bAInZVX39bRsIFWW1NUAyVsKMXGYeq3Ej081ybDy4T%2F8VaO31BUdyiYOChHq11lQr2VhPJOEnB9nf3ohgjUEQUhYlV6KE1LGOmGESdJ7qLYlcEECSNTLJvLhJYfJ4x0qEWtc5hkXOeIGFmgadtkhKHIkTgKpFtNlSFrvtMdd%2BVnfQ5mXBNaOaEbRZfVy%2Bp6UPEOz8TDaxQMLXFOqOuEuoSNZpNUzH8s2x9N9SVg4PSQjj3ukTtLyx7BHu6OZS7QNF9oaV%2BCSCeI5GHUI0LEstCcDQMgQo13FDfeaS37FK2UgD7A4KF1x173GVp0v05GzDhNl3ZbLx%2Bi1WX0a7%2BhUqdvxRdUOo7bWbdy0IlnQXAWXyX5r90ss7gV%2BWVNf3ofzzkA3XM0FkdSeJc8570855%2FiyGVY6afQiNCIPc5zc14HBab3XNjmj8fpLkjmdVCDj9x7boHLKREsXpr3XNhbhA212PgU%2B0tvGSWF5exGmyyd5si8zhY4R5bQ0YmTZXO%2F5gipo0M%2FOV7nswXOESKodIHKzcYJUz99aNUowEYKmgvaAnfAJqR0dEGv%2FPBLGnFTqw2WY%2FNCW%2BB2fQSTw3b7oLmMLXD%2FIYLIQbt98JzHIr2hD0SI%2Fkem%2F5U4hG%2F%2B%2BNf89tvi33%2F%2B%2Befqn%2Fb31zdfft6KRHRa9QNcdUtXoDJIV514LnL5PLHLx0DbyCQijVw%2BvVw%2BF4Hv9QyEs%2FXH0yVn7XzJGZYGbEMJOgEfEnkvweNjQ8k4gsWL8%2FjYUPqNsNGVfnNcl%2B1gyUgIQfP62NDQKUKIslzD43T62NDQfEJKJ6QUaT7v3d1en8N2%2FEjNc9JVURL1pebuzsT9SkZ%2BlmyvG0WOvb4oXhizopaUPMefX8WD6fm5hrhG31V%2Biv%2FQKGBQys4rR1sM5iLaxH5WauxP7675YX7JKgqjolxV%2BQVJZnHy2xv2%2Bv5EXtiKl0aSlQxI2eoFa4chdX%2FtqYMvfVALHej3U148GCSk0rgFI5T4T6XSlkxAkrZP%2F4Bl0tYPbyMe7PQCBO4Bu9ClUoLIAJISTy8lXO8yfQnSgXBw4OoYYiAKNFaJJO2Bh7OhVTEQfkOCyJGHs%2BFVMZhAQ1wkEKHApqOtYjCRBH%2BQZBgmGeSRTbvVj6HRQ8LZ%2FyTlECYS7p2ih3pFD70XZEYPDEjDh0SIsriNWQeFZutosQATKEko8ENy5SnDh%2BymsYJECkH9%2F4QKIoXwyIDCCf4nj7l6DtxQsr8gOcHh0LihhrhVsQtLxS000ZHELYlbvOdrmUXFvxRpiyMi0EIyJ1A%2FHcmITop65p5uFeHAAQdeGOaEFHaskO4sUAyjhE8THCqiLr9%2F%2B3q%2FefPuzV%2F6398C5%2BbD8n%2Fxew0aokvY6IqNamX1SkD37uzIPOqQl%2FLfhNvXbGVS3wn2J00ioQ6teseEYIfj7sy0tHECw5t0E1odjwlZQMefRtAiJ9F0YWgkBaHlwCIpmhBREUkh1XlIH1aPkKxh%2B3FxAO0G5IXz7j37LS19i2jZo6Rl8YJtptBgG4kYoWAb1cE2zWVHC7YRljjtHs8r2KYJILRgmykF2ygOtsn367bpsv9fn%2F1GbCZ76vtYrY4OeAE6U2iAzpRk0QEE6IxV32cKdQcRLLrBohA3UsIEByN4ogNqBBNGOjuF8p5BTZjgAATNpzyFUvQEEMUV%2B%2FFqt6C5mKdQip7A0q0mFO8CctHqE6NMn33KRg9TKFFPmOncPeZTu3sMEjzQXMSiKCrBQ7VIiX74UnmCZOWg%2BYVn0IphhBAFUW%2BoGEHzBs%2BgJL0EI0TSH0ODB%2FmyQ0l6Eg1HRdJj9IqQA0jCrBJJ34ukP1v7n71kzVC4y3JRZs7oEsiIshnFbUSovGDnLcNG00%2BgNKwAGwkhmIGzWS7LOtqXURR4WfSFYhVl0lRRsFACJWIJJd2iGxlEnCuvHn%2FdzPrCwQoaaT%2BDcrKElU5YcXlDoQwo%2F7z86S3TsYCCRt7PoaaxBChk9qg2exqrjkfDG6KACAkIZLuHB0FWFNtToZPkUZTF1pO94bLlFbJZ1ASYhaWsGDqUTyGADQeYF8dRfLpKrl7lm1PNkmolsGP1tYMADs1JNIdGOBHelDRtLOFzvjW0TnMR9jgE9SdG4RxrX11AXZWkTo2vTploTTUNHUojk%2FShlrE9wC1rGdtEt4m1tRr6ACOR0H24TpImguZYdNRcQnC3nSQFVCqzJpvUrkja6VcpN8ksl85zC0xk%2FpncdWLrspX7GLlekPRaBMH37SnbOWl1%2FZ2isYRzCaN8tMvy5Zr9ChdrWayWO8hEcwfNJeQtuRR7uRT%2F7y79lvrBSQd3oiofI4NQG1XNFCBzPCfjHBp5K%2BBHmzjIJfDlzcXnN19H6tWL5lxcQJ2LEnSQ4Yoc%2FoSmACygbkKSCUMUey4mrjy2e16F7Lf84T2cFiTZF28Zeyk7MDIf1sQXWl9ncN4pAWy4F8BPvrKZCv%2FNZsI9TfnLV43QlzFBhdhWHhouRaBS4Fq6Z7dfpt8SL35fR1WWkTYmosqOFgiQGqD%2BEKT6QeozE0o1QH1plloeA1M2lkZtg%2FNiCVNDlasCUWdsYgLHXyU1WOWHRoaVyCtAIOPJjh9PVF15oRc7qZcpVqebbBMsKskx6fWUcgstI6bcZYl%2BHJ7R4K788GyTXjOgsmcuCLKiekr%2F9YCXMd%2FjCxK3mdXxppn2Akv7MgS8HhVpJTZJpoG4SYdB74sX35Y53meVA0ebCGGYUFZBhhdiK5HDbNDYSsOEGv4kJxToPkHEtr9Tb%2BVw%2F9lFNu1JchfFrjTCb8Q4BTS6soy3J8FyiIJFBaMobZwGDdoksdJFrOyMtwMXweY2T1bPejrfFuo%2BecZFsP%2FNnqgfD5mxeeTN0073bhKD63lDgrxFTC7CNkECA0UP2RnbyyCUVk3oQTG%2BzTNs%2FbN3s2Hf8NFZr9mcnVbR%2FJabUNsDr0C5DD0ADQjwRcwGtCQG%2BNEGAm6B0i9IU0z7nmhAu1m6ma0fmtUjSkk%2Fi8UpyAe0lTGseSOkjikPeEtDFdqVU6Vteupp%2F%2FUhWKUBxZM6UJtx3sYEjzixwISZRWWuuhKsn701t6yj%2BGHLsVaODa5VJGtdU5dxeEyrBWbcJMAhQkR575r6uiMKDGg8DAmMZ8W0NgGGZ3FAg2NIsDyBYEGL3WTqOQmWUamTUp0emBfdvM%2FOciKKyI8GIhHZPPs5kR9VxRPHwl60DJeymJT6tRHf5blXXm1lZIsVbeKlt3elzday8hsLg5w9kdfRVRQ6wZvt0cYCbM%2F5EGVbBUfCTy9NH4plYRZBVMeJd%2B%2Bn%2F%2BWXs6c%2Ff%2FdXcTP%2B%2BvV99c1D8Ua%2BUrEXOKl%2FW58J2aRnl57FsfNQOaEQUNs7f4rypiJlMmKT1JovqivYumD6yAXsRT4G4OVWU59NnfjKS4vLGlAqp2XIkw9i1oi%2B6ULf7LJ8j%2B5fH41aolJbQjjuDKwTX4aws4GVLYlkJGVrN%2B3zs0grz6yzPTnmauieEkLodI8N5gklgCGrTLFV1lx3PLpnAg7AJUHRLQKmwQafLqMwLKNPQm%2BZATLjfGQy5dWQzWjPXoRO79hg3pgA1RFQP%2FzQPX94w8nCnDIsSEKeoYkLFzxWyAYH1OyGS7%2FZbCf4NJJ6ekylMJj3TCVeKmuZ0Eh7%2BCHu4QbeJm6DKXWSuYqi0rambnd2teq%2B4SForXuNUkWyjU80nWBCbIsqtuUi8Nm34iUVjs2biNTCKu0sorZEyF2TdsZMSJxAC56WoCZRCiJOlhlwaymJF7VDqrkTsxGpicedTMDciQQzpHep9mg31h1P7QK35SJZoSBUprnznT4mUXIKBTVopgk1PA0KzKoQ1FTU%2FuAFZaSJTCMjSgXx8v3b1%2FvNm3dv%2FtL%2F%2FhY4Nx%2BW%2F4vfa4QnFJaOIef84aMTulF0eTQJexwoRVm3Drl7lNG5P6Nzb01%2FlDTIhuxAZBonYPcyiQ8l29H5w3v3see0tJ%2FG3KDwquiZBtg1QCAbDrJl7DmpVyjVhwMvtGp6pkEybER4uV7gMXj50sSGp4EWXh29yRBigAghZEKobM%2BBsPBgRxzJlGMvD5HvlMkTVYhoYlqUCkDAtEQNI%2BfdAOfdoaW5j%2BnvsyStkZpx0ra49zY%2FHq%2BOg%2FAOACT2giR2Z39fM0P%2BonlUBabGiZuW1o8zTIIPBnw6lo%2FL2Lq7AhMcZzM9z6XS%2BRxrxczxD8pNqE3YvQ9vIyaXa%2FE4Ur6O3%2BigB4j0FOF5UqfgKHTJY0QGE3LkIl7075TEJ1aweE3XPG3txtzncUgyCznfATGJfAa3%2BQnDXUP09%2Fnh8cCiotyi1OsODy4kqJDXXabZkdf9wLzuLeExwdOW4EE7JD467zRwFzsScNBIrrLOAAFHOXAKt%2FnFI25zHMiYOlrwBbwxE0GmI2QArnAkuOA5iaZDNFsicJAJnNKDiLDw8NwXkhMvuKpf2yODlo41KyCppnKcGOe4lePkc9ytChyg7NqkoXJil12TNdumWIIBsQTPpuZav399%2FFzWHkWpuM2kIawwK7VNwWGoEklEmhO25oS3S4HJHMm6k%2BL0uOvrkdJbr4aJEYC5ZeERgeDMCMLOIJfTB5%2FdqqZ%2B547Upr6NCSMVURdSZxTY974bRL3nOH9Ek9Jrc7rK%2F5akCHTme8w5oEjXHE%2Fsg6lYenSVcfgXBXRwncZYmLEMMMei8kmteRqXgZPkv6t0uF28Pjm%2FmMs8cLtdbtV7TreyE%2BLr3DUCrz2CJbO%2B0w5jENJe%2BUD8PcPAEVxlXgmCR0DBfkGSa58TqZZ7KSgYDFG1wAMJ2A9AIBnoNrqMosDjEgXJWWRgBUGBPYsEkU4ZFytn%2FTXKVZ3TOLpr6D5IKLHRjNzZkP2GiDFsYmyGxojOaA%2BharaD%2FYszNJe3IAfU%2BBfFOI%2FPv9i1y9Si1f9mtr%2FL1KzVa73rBVZhMvVtSzW2f3QmcQaRf7SXf1SSePLk7sqRXZ0Tcd0eV%2Be8iXlEV6d4Oh%2Ff2CVCkTS6o3V1zsEWn2TdSaHbQwocchbyLq%2FrsTlb52A7lNCr2NlaQE2Bz28kP6scF4sh%2Bx4hCObzK0BUQgYHJHiO4TmY9dgNkt5zWMxacv5Q8Ie5K%2BL9bm%2B8ukcT4tUSZVYQph0cSkPP5hBcNeI8RkEWKFsTC1mWAa4LQMjqjqyvkes8CHhdcIf%2F6QiOU0RSERwGTGjpLYfep94qOfWLN4%2BKIH76OGLI1LHMF8sAxxmr1CsoeOgIg4fYgeEolJfJe9Yg3OnnotIdJx1Kd2S7euoEr71L2AN4wMVd1AuFw%2F2xbrThu%2F3IskpF%2FIFcVoGLt5OsesmyqrBon43IalrmJLuwZJdl4LlYiXRADtIurEd8sqEVfKLQIUEO2WcSpW3NFDgk5FHaCvwRhJEGRrQsRltGL0Fd%2BAeyb1YCzOu%2FZsxSi7aKor5y8IMz7gj83XMUth6eI8X62DhXUY94h744BOgUkocckmfj1ZKdK2BkScK1aZwXlWRhTxVswDtMFLONT4qEHxIJ%2F6Lbjs0ku6ywr0XyiAjTG6Pt2AJsXYkHgcQv9Y3CHmCvR0vSN2pSf5Lwuq%2BBA2vpKepkpq27eoBmwu%2BjG4VTZzZ91g6gOHI3yxTwSB2HjbtHNg30Db44ZHwCQwNH2iLmMYDJAom4JbJANVnQWHe8Ln0LcEQEbbNHk7%2B3rf8uTd57Ms30Yk0bD6kkJ1lHSFyWvSE%2FEVtELsBkKwnQA20R2QQLnktmAQ7hIbD0yASpp4uOBxg0V062vxFgsACzKyV2POTg9QUUOx4hBwc5u5JeR8MOYoNAnTwYiNj5j59eF9mK44MGrU1gmeZIoBknPHk8zKB1GDRFzAFh5og7kTbhMscjK8GJ9ERSj09SI6a%2BLMCVXEhOvOhOpC1I4m1dEt6PgtiGBLExXLNHNAgyav1g%2FvVy5JotZJrC0hcRaQ2kaqYtYtQQsAp18pWoJvF54BFp%2B118Tx2O9sjo%2Bj1Uu58p7Cq3bC4GPECkeCpWPJvrjhYVY%2BpQg4MEZ%2FeCGLUkBi5nWnrAuJEK%2B4VW3lNWWQaGxJBuwRpPd4WaUwRrBbDe78YeE1FoYWQmOFqbEKUGUTu6oUpYvpExZphouzE4c5tApgpkYP%2F42Ciz0XR9cI0wQpkqlHXwpY%2BNM9GpEAFn0MBBwpkanMH87mMDbIGm5YOLlBPAFACs8NEfDLBME0%2FZh4YHEbAUAAvgyB8bWmjV60wDGu9KROsTEK2miop0OxbeJJkycs2aJK16XAc5%2Bptn8DI2Nxv2DR%2Bd9ZrN2WmVdH1bxLEl24Ov2t%2BhY8UItECNFq%2FEvr4NaooR6BUj8Ml5WGW97sfw308le6BgOEU%2FYaOOIs3W8dxQJpiSMEk4dqmFUSFQe4NF4pduYAPPL22CTTwCRjdgiD5CdXwMCAl6FCUqxMd%2F9PmP3%2Bd%2F%2FXlzv%2Fqvm6SX0ST2NDDPRBhBDP5ptlUQmeuZMzZ7YcyedQp7QfIyqB537npFIqhpsPHikCA1IFADxRqiVoUfXCpqwQ5KErUkavEesNxrS5L2xQPhySUtXi2Nkq8kYauUMdS5%2BeOssk6ZGbZEGyU0w8dAqzTNdnrCCIp9HEapl%2BT4%2BJLGbPwnqlJnHofLQgGdItXewC4IAgtpb9jaW%2BisdufPHJP%2BJuQDqXDHqcIp6RwtlbfgMBKSt8eyOZtTNGeqRXDBgUseueaeFfr%2Ba%2FYGHyd4YY%2FWEBKOQohUhxA1Ft7CK0BlkaNrpLDEPRoJRvhhE0K2AoVECgxLRLZ67pVXGbI8gocpg0tvLyCnLZjxG4sAH7ZK19FVFDrBm%2B3R80yB9dxi5bfnfIgy%2BcEX6aeXpg9FBI%2BzSaP2ErbnOPYCJ%2FVv679KNoHFpZ%2Bi3OctVq7ZHkwzm6UrUye%2B8tLiusZClAMZ8nhLgmAomGpIMFW1nHjXsKqD%2BtcrxstsCRpLWDriNoY4UIJefBvC7gUO5ZGIFVJbVNc2a6w8XgiXBXZjSNadtJZ9JRBbYu50GYVhSfSE3pJj8pUqPaWJGQvNFJ6B3RqEmUE9Bz74SVoPmy%2FjkOsR8jgIwosoFio0IQgDQQVIkvOHorTMaRlPehjAmmO50MDpWwSrIbBqJMz7BwIrQ2RxIQgsBcgaUO2%2F2leknNIekyjk7r5JtLCo0bIaKj2eGI%2Fn18h1HsQz%2BpUNsFQjRAgN0lM3wwMMOPFI5VNXcwkvAyfJf1fpGb14fXJ%2BMZe5Snf7Rqv3FMd0mFN61wi89giWWdgUfAwCIMoHsi9oEkdslf0fEExkMneQO0usc6n1qhJxiyOrTBsNJaLoMqEEvZcEJkBmeDbvkM2MGFZshlVFWOeOhR9CrZNk6FNbotKntnNdiaoLmReSaN2r3cR%2BqNdZ1kqiyebi6Te2RL8hz%2BYQz2ZZyvnJXZPjezZN0UeiCmbBJJeezcmkhm7NmOC1ohTloh6Xv%2BJJIPkLitxbt%2Fz4eShx273fA0eSKL4SRuhe0QmY7pNAhnQ11bpaY93x%2FFITsBFHoqKfN7zYGk9bQkKdH7yJFrRQ3xmYzya0DPKD4zWPbGAFr0PBBBwWTljB8HiPBiHEBgQzcIQ5YWiol3U8vOC1EpiAU5YILyocF%2BNhBq8twIRkzPG3xG7CBS%2FbbTqEWyFDGdlQRizCPx3CkJCceDktsZuQxEvAFCk15MdQ5cd4Ni2xZU6JZktsQx%2BzJ%2FYUrJsLWJP87OKUEGKu6pEoRZ8ad8R4%2FZ%2BnYPJIAhbSso62%2F%2FMUbIyRkOjnjqg0e64LCWXuiPHaKs%2FAcUaEFmqrDJI%2FhKjR2yrD%2FRcjwwzTsQEOjSWcPfP23XjekBmYsSKQPb9%2BpIguE3FnAtbL7EeK6F6ZDWGJyPDH7keK516ZDWF8SKYcVT%2FSgng4lH6keA4a8U3koBnsoHntJNeXkRO7z8dFY%2B3BZlkGckwXzRxsMIhhkgwGuWhK8NacNK2jR%2BemmYMNAQlgSFs7WjfNHKylk6Do6KaR7HOnTUFxhK6aOVi9J8QoITyZKpcmz9tZMwc7iwlTSjCVN0p67V2mp8vs5Ytw1lhTsLOGcKYEZ0W1xSRD2uEgDM9TMwcX3CI9enw9GtGTImx5Ei3Pn%2FVMuEZ2GJSngVd7ZLGngQtRnv0ozxddXUfCkraq60zMEavrLMCk16INfJLZAJa0WV9H9oEirnS8CjsLMGcmgQ3peEdbYWcBZr5IXPTlSkWNHYmgOMIqOwswr0WI6V71Yi8x2lNHeco6OwswO0Vo6Y6WTpQnDnQwmU1wugNhpzt2gDQmEmrQ2MqyMylpsoeoyeKxlZYOjg8icUElME5GoBst0QBLSQNpSzdbsD2SBtJncew8VE4oAL29c7O%2F9LTVardYpLc7rljYgy%2BY6Y0Fz0e94%2FLZjsvHaoBdooGobHVU9ktugW1OJWpbswW23XDVILbAtnQoJSkTjKTIHWsL7LKzRq91Jz0OREk%2BuybYlg4lC%2FagBoGHGdDrEdBlD80vYE2htdTpIexXSz2HTI19abfr%2FchuOU6rXh1vGyckjcziPSWO8NSCKTQKkXDUPc51HXPCt91RVgxfu%2FUzm%2Bs3vgD3mv5bNXZMd9nP0TLTr3ZxVuKjeZoXurWTsnVtt%2B6thN9KhlWyDwyM2o9Nhp5Vqtn8z6VmdL%2FhkCF0vfK6HLEfateaXry646%2Be8l6XUexmaav5Cy1lj0qoFW%2BCDNPlZ7Hj%2BptEs%2B75dy%2BjOGTHks3aY7MS%2BGvuPXhr%2FIOtg17QT%2FmZvX9duciyr7%2B8EkO90rzAu3VS9n2Jx%2FRa18lk2L7xlQBnetu6OV49uA9%2FbJzv%2FLNPTnr91gmCS85ijIiWtacZfKDrVLMGPSh%2FZ%2Bj4ETCBz0Di3GtiUvff068%2FrsvI9bTLIFr%2BYiLBu8uCVCtPuB%2FXzg7S%2BuftAd4s0j9%2B3XwX99KXK81zuWGSjdjgQ86hZ52xjwQK2cL%2Bqh8pflcbMfwDbRll%2B0vqrRImp2IvXV5zmiRrlz0pX%2F3sPr9sBMmyjNbtfjEDaeplvGIxEbHnuFEYPMjuVt%2Fysx1%2Flb9umRvyzIPndFSdJN99xei%2FM9uGhzRmf5y3MURPNQRvB9TzSoTdUxB2eCaeAfW8kmquKk%2Fk%2BXVUNnWskEXLoI7KqlxlAhPseQrlu2mmSkkU3QsnuS4SkCrAyu8zAFmWqI9UhZZZd1vNm2VqbL3prVUHNhO8CwpYkjAEJWBU6qOe9PRxylIszIYYQiOwZLEfBAwFwCiNoDo%2BenvCASjBc7wI%2FY9QolSX0jlQnFW04beqWspoEEGLqbdMcGAEQaSTIOE50Jskx8eXNGY%2FoCJIdmvjfCm80C1On13wRV%2BvY%2FaD3fJA7P30lml%2BYK%2FKriSWBwBPw0RTt02wK57w2QmfYZR6u%2BCJDRdR1xYBLmDHHsGlE1yEEDovEpXfM%2BP1Sl6YFAk0CzxlGhwkRqDpBJq8UYB7lork9tRDx4kpqCAEnICjTwgnvYTLDqBgI2aKp11D85tliCEvhmovRnPh0Zo7WIL5IVGBXUhPUqoKsVJeE0KWjqaVWFReSpWjoeIueMlZObbIl92XldMqEyQ88eoRboP1bqsN%2FEFh9oXCUWCCd0szM6bFXflhGf8iku0QYu3xHAM2WONQPadFV7A4n1P8OZyizaHw540%2Fhzmz92SwNPB2M3CHPuVzyhNnc0a1sg0kF5y9Px1hSvGKU9hPOaVfI9d54BN6wQMWORt9OkqWkjHHU7gUiE7S2XcB5kzY%2BJnf7PyhiDzdGXWqSF9vbrx4O68FNvkk8CFbHztiES9U1QK7qEhuUMTiTosAzcwSQW0kmA5RMFkGGglpgWM7SDB1VGikjNLI5Q8QVZknI2YKEqEyvfgmmoWnGthDRO9QE223jt1O6q4HVA9N7oZM%2BgJv0hWIvaFUw%2B70%2BdFn2kZr%2BmvZEpOHXBRDXRQvugfGVOKvb%2FbAWBjj9cCwbLB1J54GUqJAQR9yp1yuPcn9dT3w9JR9MCwbHC8kgQ4ZXsfaB8OywUGoJDL6212iE4ZUWBxfLwxL5BUSapSjZqdVefxNMawJ2AtIsOlREu1BOIxbRvRz6IoxARM9BJ5%2BIUY7gjieQ3OMCdhfTuDpFQf05NjB668hKFcyjQ7RNDLwAuMnYHKWhAY1VqmwNHihiRNisRFY7Grr8SdnogdR0sJTJesyXvaYaVYFMm3R8B4BsGBKekIytCclLcRdk48uxaAaMrrZrh6PjJ6AyWgJaEjjUqxxNdcdj4yegMloEhb9yejtbnfaFhbKyOgWatDUdIFHQg12%2FmqFn95h32PmszYRhcdTT8FU425E9ZjwE5OXEq5WvN4yurL5rlxQedljsiWROc3Jxmx3DObmVM52nfeUTS%2FSRCL2LgK7V0gQ9iU5FQEFIN4Q61aLmlakXx%2Bifo1oWE3BjCZJCEXpP3V2aRCx2TyDZwRl6sFHtpHxQN5q8em3hQ94e%2BxV%2Byt0LEq0hWm8BogziTAjSrQXJfopjtzN8vnQobaoB7KPDl002HvNtPEidGdgASxgTQIYRIeuc%2BjWqNDGsaOjQWdgM1QCFlLTjpYGnYENYhISHe241g53WhcSR0h%2FzsC1HAgtyujPAkfPmgWdg1kCAtZwYG3W7mEBSwnj%2B%2F3b1%2FvNm3dv%2FtL%2F%2FhY4Nx%2BW%2F4vfa2DvLuFqOK5cL%2FDSXRT32JDCC%2FCdgeNMdoNqSFt7qYMGyYOgItRV%2BmCC3e%2F0YA5%2FMLOqB%2B%2Fd00p7r91B0yM%2FqEz4oz2oCqR%2F7we1VklxhEfVtPDUfnpYEXOplhwoH6K7L2m0%2FKUKMJAHb4YGmLkC6rHffPoht5oS718bJ0z99KHMFblJH8Z7Fi0dz1ICRyARUTc%2BUVfW7kZYeHDEBQnhY%2FenFkRhchgOVcRCYHOJ24Ecqr0cqkVRs0yLeDZe1bI87Z7WDOykllcVL1FvDnaYCGyTGAZ5Vav4rblWZR%2F0wZKs5tFo%2FSfmYM%2BJBDaktiEXm8Xzr87BXCGJi46mnnzDO5WIC7Ras3ie1jmYuiLcKOFHC9gUPrHHy9qgdlNrwAzR7wpm9ghmw2HmuG5O8pXgyrmpwtwTb3dQVSODDjELR6SAD0Fd30VZx3wql4GT5D9LGNgCU9qtnxlmv%2FHx3Wv6b1XDXHcZxrTMPqxdPOHxC83TvNCtnTTnZsr2pHpbxmxBJcOKvcBJ%2FVs%2B5jvtxyab3FWq2fzPJVPbOt9wyBC6XnldjtgPtWtNL17daT0mQuW9LqPYzUzj%2FIWWMvkVasWbIHtKys9ix%2FU3iWbd8%2B9eRnHIjiWbtcdmJfDX%2FLl8a%2FyDrYMeR5vQ9dz8zN6%2Frlxk2ddfXomhXmle4N3yJtJa4i2j0HWyR3zf%2BEqAL9nx5nj14D78sXG%2B888%2BOen1WycILjnVMSJa1p5m8IGuU80a9KD8naHjR8DkIQOJc6%2BJSd1%2FT7%2F%2BuC4j19MuAyaumUjw7jIGsPKE%2B3Ht7CCtf94e4M0i%2FePXzXdxL3250jyXF%2BXMRsyjx%2FUcetYZ%2B0igkC3sr%2FqR4ne1EcM%2F0JZRJn5Tb5UwORV76fKa7xwXr0%2FOLyblq5%2Fd55eNIFmWVGj3ixlIUy7s2faWT0TsOW4UBg%2Byu7HVZBui194sqztlsU3W01SlG%2BRzOqpOru%2B%2BYvTfmW3KA9SZp204uADHzhO3Mz63g9gZcUFc8ItxyRW7kPa0rrkWuPGogQWVf1Oc6%2FiSG5jI0iObDUxMUxAD2wYmouc0Ar7BzLx4Ekh4gxx5BdqbzUvah1U58UZrXLIAk%2FISyJCid7SNSxZglpxERb8kSdG0pCUkjq9hia2DA%2FUILeryX%2FqHGI3TpUSaBCOUIoLKS8uCGa%2BZia2bBDI8ebQ7zQdTIuGxmbYOzt0guAxM9imDTfCSfsbrXWLrtJkhN2rbn7CPJ2zQoqltXQEJ029KH6%2BBoMgP1WQnTCzG1tYljO04k7k38R9pHqd48ziE5jnC7MXm1OJlL9o62FVKDNr4DBpe9qKtg12lpBxQf6uTEXIPbV3C6pKDc3Du4Uv2cpY1OPZ5OaeiQejWy4lWBNYGM4zl40Byt3O6YtPVueOzPoh6Sn%2BnbUA9GTLwkLZ2rP5OW1RkIqGBmrQonJ5ycXGEnk8DSh0TbnpQx10zFA%2FaHboDQFB6gADUuf%2FU0NxDPHoZz%2FVpQFkHwlP3LlXyDB0wpJDAhOcYNYeYUqQNI2vDiI5Nc4gZRFLkxXKXBh6tYxWQ9NwrrzJkOZkZbeKltxfgZgu2%2FMaC62Srfh1dRaETvNkePS%2Fyhwskbc%2F5EGXyiC%2F6Ty9NHwoy09mkURsS7Tku83irP0E2gdmlZ3HsPFROKAC9vfMnfuCk0oFp3iDfRLG7t7uumDZSbppXsBf5KMDXN3MaUidm6n1xXQMZ5cwMkV8Sc56I7iGZPFVS78l56vFpbltGczeq8hnzFu4FF42wQ4OJB4moI9UMOQMXj6A2wXyBZN1JMwMkZtQk3ekyCsPclGNfFnpLDku04mpobTxtE0wL7IaNigSGDz5boJrmW8x6U9ftI6P1RydYhQNBntYANpjoscRMa9iiacy6YWi9xG0TGuBIuBqaySBsEZTCcnj6ADScmADSOQRd1qUEEyV4gV8mNL6XUHIg9RXNmdE%2BrVlf0ZouBpWNo%2FqKVF%2BR6itSfcWXUF%2FxZEdO2WXEf9%2FhVDukKopjVlEE1BtD6xlnW0M4XPWpgPmTgEO8IDKilgJGVE0OIOoETvEm8Mm4QUDyH%2BacWrqCOZXTgRL%2FI9lbA%2B0tLdO91l%2BjBsnHfklYm8FSKWfq5lWmlHIlhs8ZRxQbSpiIhcnt%2FPKzTCPSuIZ0Gl9dnuo5GsWfV%2Flf%2FonJM1r4m%2BqLV6%2Bku%2BNpHN3tpCfzwePykxZihBi0Thi5IZ%2FADWnhRYiJbyIJN1oh4K1bsnuQWFV95lV%2FW%2FdqnK%2FAcQKo5WvhhYsJzV5NuJjVztAeIVzMu%2FfT%2F%2FLLGdzyd38VN%2BOvX99X3zwUb%2BTr0i3ETBZD9tQRXWIFKKJLaerycwrr6hfZZRqPR3aZhoB7iX%2FxbQg7K9ijJ5FKpFIdbWSXBfbRSdadNKo9PINcxdlpNvKdQ7srUMGttpme76w6n2WtmDv%2BQbmXtI2%2BXUJWavg9lygzC2wN7oawghXOwoOKBWjljJ48iyC0HUov2CgjEYKdTIoZKIIXb2aD4xgJQSOkjx5nTJotsdVIgz0UDRYxzMweYrqQ9CBSMLsLon5E9e8wSKSeW1S7zleZL1fcZmI0aBcbsW7cBKw8CxiR8AL5bCtZGn1JOklNONMYi5gR%2ByUBQ7kzX2jBg5RdADjwtpQJOIaLwNEJHFubqCY8hlD9AKDgFfqagMPUCCidgHJTBI%2FtwAkaVAwTLTB0AjagCSudsJJHgLtnBbH%2Fmr1BBskUzdiegI1tAkknkOTB0WOCZIGnu4KdihKQEBWnmIpr2SwWnl4KdsWRdBhWkKBVhQ219kAbQt21EPY2jri3uvzsHfvt1x8j1%2BNn%2FD8%3D%3C%2Fdiagram%3E%3C%2Fmxfile%3E)
- 
----
-
-## 🛠️ Tech Stack
 - Java 17
-- Spring Boot
-- Spring Security
-- Spring Data JPA
-- MySQL
-- Maven
+- Spring Boot 4.0.5
+- Spring Data JPA + MySQL
+- JWT: `io.jsonwebtoken` (JJWT)
+- Lombok
 
----
+## Prerequisites
 
-## ▶️ How to Run
+- Java 17
+- MySQL database
+
+## Project Setup
+
+### 1) Configure MySQL
+Update your Spring configuration (typically `application.properties` / `application-*.properties`) with your DB settings and server port.
+
+> This repository expects a MySQL database. Connection details are usually under `spring.datasource.*`.
+
+### 2) Configure JWT
+JWT is used for authentication/authorization.
+
+> The JWT secret/token configuration is expected via application properties (commonly a `secret` / `jwt.secret`-like value).
+
+## Database Schema
+
+The SQL schema is provided in:
+
+- [`sql1.md`](./sql1.md)
+
+Tables include:
+
+- `users` (admin + mandoob)
+- `clients`
+- `products`
+- `invoices` + `invoice_items`
+- `payments`
+- `cash_requests`
+- `mandoob_stock`
+
+## Run the Application
+
+### Option A: Maven (recommended)
+
 ```bash
-# Clone the repository
-git clone https://github.com/mahmoude8ssam/mandoob.git
-
-# Navigate to project directory
-cd mandoob
-
-# Run the application
-.\mvnw spring-boot:run  
+./mvnw spring-boot:run
 ```
 
----
+### Option B: Package + run
 
-## 📁 Project Structure
+```bash
+./mvnw clean package
+java -jar target/*.jar
 ```
-src/
-├── main/
-│   ├── java/
-│   │   └── com/mandoob/
-│   │       ├── controllers/
-│   │       ├── services/
-│   │       ├── repositories/
-│   │       └── models/
-│   └── resources/
-│       └── application.properties
-```
+
+## API Base URL
+
+By default:
+
+- `http://localhost:8080`
+
+## Authentication
+
+### Admin login
+
+- **POST** `/auth/login`
+
+Expected body: `User` (model in the project).
+
+Response: `ApiResponse` containing the token (JWT).
+
+### Verify token (if enabled)
+
+- **GET** `/auth/verify-token`
+
+## Endpoints (by module)
+
+### Products
+
+- **GET** `/products`
+- **GET** `/products/{id}`
+- **GET** `/products/count`
+- **GET** `/products/low-stock`
+- **POST** `/products`
+- **PUT** `/products/{id}`
+- **DELETE** `/products/{id}`
+
+### Clients
+
+Note: controller mapping in code uses `clients`.
+
+- **GET** `/clients`
+- **GET** `/clients/mandoob/{mandoobId}`
+- **GET** `/clients/{id}`
+- **POST** `/clients`
+- **DELETE** `/clients/{id}`
+
+### Mandoobs
+
+- **POST** `/mandoobs/create`
+- **GET** `/mandoobs`
+- **GET** `/mandoobs/{id}`
+- **POST** `/mandoobs/{id}/toggle-status`
+
+### Invoices
+
+- **GET** `/invoices`
+- **GET** `/invoices/{id}`
+- **GET** `/invoices/client/{clientId}`
+- **GET** `/invoices/mandoob/{mandoobId}`
+- **GET** `/invoices/{id}/items`
+- **POST** `/invoices`
+- **DELETE** `/invoices/{id}`
+
+### Payments
+
+- **GET** `/payments`
+- **GET** `/payments/invoice/{invoiceId}`
+- **POST** `/payments`
+
+### Cash Requests
+
+- **GET** `/cash-requests`
+- **GET** `/cash-requests/pending`
+- **GET** `/cash-requests/mandoob/{mandoobId}`
+- **POST** `/cash-requests/create`
+- **PUT** `/cash-requests/{id}/approve`
+- **PUT** `/cash-requests/{id}/reject`
+
+### Mandoob Stock
+
+- **GET** `/mandoob-stock`
+- **GET** `/mandoob-stock/mandoob/{mandoobId}`
+- **POST** `/mandoob-stock/add`
+- **POST** `/mandoob-stock/reduce`
+
+### Dashboard
+
+- **GET** `/dashboard/stats`
+
+## Responses
+
+All controllers use a shared wrapper:
+
+- `ApiResponse`
+
+## Notes
+
+- The repository uses the Java package naming `com.Mahmoud.sales_backend` (instead of `com.Mahmoud.sales-backend`, which is invalid in Java).
+
+## License
+
+Add your project license here (if applicable).
+
