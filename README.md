@@ -2,7 +2,6 @@
 
 **Sales Management System** | Spring Boot 3.2 | MySQL | JWT Authentication
 
-نظام إدارة المبيعات والمناديب — Spring Boot + MySQL + JWT
 
 ---
 
@@ -109,22 +108,6 @@ The Sales Backend Application is a comprehensive Java-based project designed to 
 
 ---
 
-## 🔑 Authentication Usage
-
-All protected endpoints require a Bearer token. Include it in the request header:
-
-```http
-Authorization: Bearer YOUR_JWT_TOKEN
-```
-
-**Example:**
-```bash
-curl -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  http://localhost:8086/dashboard/stats
-```
-
----
-
 ## 🛠️ Tech Stack
 - **Backend Framework**: Spring Boot
 - **Database**: MySQL
@@ -186,8 +169,6 @@ sales-backend
 │   │   │   │   ├── sales
 │   │   │   │   │   ├── SalesBackendApplicationTests.java
 ```
-
-
 
 ## 📝 License
 
